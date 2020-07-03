@@ -2,21 +2,21 @@
     {
         "name": "1",
         "description": "lalala",
-        "image": "assets/StoneImages/Purple/1.jpeg"
+        "image": "assets/StoneImages/Purple/1.jpg"
     },
     {
         "name": "2",
         "description": "lalala",
-        "image": "assets/StoneImages/Purple/2.jpeg"
+        "image": "assets/StoneImages/Purple/2.jpg"
     },
     {
         "name": "3",
         "description": "lalala",
-        "image": "assets/StoneImages/Purple/3.jpeg"
+        "image": "assets/StoneImages/Purple/3.jpg"
     },
     {
         "name": "4",
         "description": "lalala",
-        "image": "assets/StoneImages/Purple/4.jpeg"
+        "image": "assets/StoneImages/Purple/4.jpg"
     }
 ]
