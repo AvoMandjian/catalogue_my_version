@@ -40,15 +40,17 @@ class MyApp extends StatelessWidget {
                           onTap: () => showModalBottomSheet(
                               context: context,
                               builder: (context) {
-                                return Column(
-                                  children: [
-                                    Text(myData[index]['name']),
-                                    Image.asset(
-                                      myData[index]['image'],
-                                      height: 300,
-                                    ),
-                                    Text(myData[index]['description'])
-                                  ],
+                                return SingleChildScrollView(
+                                  child: Column(
+                                    children: [
+                                      Text(myData[index]['name']),
+                                      Image.asset(
+                                        myData[index]['image'],
+                                        height: 300,
+                                      ),
+                                      Text(myData[index]['description'])
+                                    ],
+                                  ),
                                 );
                               }),
                           child: Card(
