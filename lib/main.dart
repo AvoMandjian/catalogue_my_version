@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:catalogue_my_version/MediaQuery.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,21 +21,21 @@ class MyApp extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               TextCustom(
-                category: 'red',
+                category: 'Ruby',
               ),
-              buildFutureBuilder(context, jsonFileName: 'Red'),
+              buildFutureBuilder(context, jsonFileName: 'Ruby'),
               TextCustom(
-                category: 'Purple',
+                category: 'Amethyst',
               ),
-              buildFutureBuilder(context, jsonFileName: 'Purple'),
+              buildFutureBuilder(context, jsonFileName: 'Amethyst'),
               TextCustom(
-                category: 'Green',
+                category: 'Emerald',
               ),
-              buildFutureBuilder(context, jsonFileName: 'Green'),
+              buildFutureBuilder(context, jsonFileName: 'Emerald'),
               TextCustom(
-                category: 'Blue',
+                category: 'Sapphire',
               ),
-              buildFutureBuilder(context, jsonFileName: 'Blue'),
+              buildFutureBuilder(context, jsonFileName: 'Sapphire'),
             ],
           ),
         ),
@@ -69,30 +70,41 @@ class MyApp extends StatelessWidget {
       BuildContext context, myData, int index) {
     return GestureDetector(
       onTap: () => showModalBottomSheet(
+          isScrollControlled: true,
           context: context,
           builder: (context) {
-            return SingleChildScrollView(
-              child: Column(
-                children: [
-                  Text(myData[index]['name']),
-                  Image.asset(
-                    myData[index]['image'],
-                    height: 300,
-                  ),
-                  Text(myData[index]['description'])
-                ],
+            return Container(
+              height: displayHeight(context) * 0.9,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Text(myData[index]['name']),
+                    Hero(
+                      tag: 'image',
+                      child: Image.asset(
+                        myData[index]['image'],
+                        height: 300,
+                      ),
+                    ),
+                    Text(myData[index]['description'])
+                  ],
+                ),
               ),
             );
           }),
       child: Card(
-        child: Image.asset(
-          myData[index]['image'],
+        child: Hero(
+          tag: 'image',
+          child: Image.asset(
+            myData[index]['image'],
+          ),
         ),
       ),
     );
   }
 }
 
+// ignore: must_be_immutable
 class TextCustom extends StatelessWidget {
   String category;
   TextCustom({@required this.category});
