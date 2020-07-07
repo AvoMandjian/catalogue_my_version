@@ -79,12 +79,9 @@ class MyApp extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(myData[index]['name']),
-                    Hero(
-                      tag: 'image',
-                      child: Image.asset(
-                        myData[index]['image'],
-                        height: 300,
-                      ),
+                    Image.asset(
+                      myData[index]['image'],
+                      height: 300,
                     ),
                     Text(myData[index]['description'])
                   ],
@@ -93,11 +90,10 @@ class MyApp extends StatelessWidget {
             );
           }),
       child: Card(
-        child: Hero(
-          tag: 'image',
-          child: Image.asset(
-            myData[index]['image'],
-          ),
+        child: Image.asset(
+          myData[index]['image'],
+          width: 200,
+          fit: BoxFit.fill,
         ),
       ),
     );
