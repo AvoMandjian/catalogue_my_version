@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:catalogue_my_version/MediaQuery.dart';
+import 'package:Hadidian/MediaQuery.dart';
 import 'package:flutter/material.dart';
 
 void main() {
